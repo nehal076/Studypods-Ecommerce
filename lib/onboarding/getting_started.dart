@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:studypods_ecommerce/onboarding/otp_screen.dart';
+import 'package:studypods_ecommerce/onboarding/phone_number.dart';
 import 'package:studypods_ecommerce/utils/colors.dart';
+import 'package:studypods_ecommerce/utils/primary_button.dart';
 
 class GettingStarted extends StatelessWidget {
   const GettingStarted({super.key});
@@ -26,58 +27,43 @@ class GettingStarted extends StatelessWidget {
                 ),
               ),
               child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'My',
-                            style: TextStyle(color: AppColors.yellow),
-                          ),
-                          TextSpan(
-                            text: 'Shop',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
-                      ),
-                      style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.w800),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          AppColors.yellow,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'My',
+                          style: TextStyle(color: AppColors.yellow),
                         ),
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) {
-                            return const OtpScreen();
-                          }),
-                        );
-                      },
-                      child: const Padding(
-                        padding: EdgeInsets.all(14.0),
-                        child: Text(
-                          'Get Started',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        TextSpan(
+                          text: 'Shop',
+                          style: TextStyle(color: Colors.white),
                         ),
-                      ),
-                    )
-                  ]),
+                      ],
+                    ),
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.w800),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  PrimaryButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) {
+                          return const PhoneNumber();
+                        }),
+                      );
+                    },
+                    text: 'Get Started',
+                  )
+                ],
+              ),
             ),
           )
         ],
