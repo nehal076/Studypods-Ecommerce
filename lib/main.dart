@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:studypods_ecommerce/cart.dart';
 import 'package:studypods_ecommerce/catalogue.dart';
 import 'package:studypods_ecommerce/home.dart';
 
@@ -34,7 +35,7 @@ class _MyShopState extends State<MyShop> {
   List<Widget> screens = [
     MyHomePage(),
     Catalogue(),
-    Catalogue(),
+    CartPage(),
     Catalogue(),
   ];
 
