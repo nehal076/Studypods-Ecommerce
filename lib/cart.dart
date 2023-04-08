@@ -7,13 +7,13 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        CartItem(
+        const CartItem(
           name: 'campus shoes',
           image: 'assets/campus.jpeg',
           price: 9.99,
           quantity: 2,
         ),
-        CartItem(
+        const CartItem(
           name: 'cricket',
           image: 'assets/cricket.jpg',
           price: 14.99,
