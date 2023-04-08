@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:studypods_ecommerce/catalogue.dart';
+import 'package:studypods_ecommerce/productdetail.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -44,43 +45,57 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                 child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 10,
-                        childAspectRatio: 0.8),
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: 0.8,
+                    ),
                     itemCount: 6,
                     itemBuilder: (context, index) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Container(
-                              width: double.maxFinite,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: Stack(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 45,
-                                    backgroundColor: Colors.white,
-                                  ),
-                                  Image.asset(image[index])
-                                ],
+                      return InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return ProductDetailsPage(
+                              name: name[index],
+                              description: "Product ",
+                              price: price[index],
+                              image: image[index],
+                            );
+                          }));
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Container(
+                                width: double.maxFinite,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Stack(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 45,
+                                      backgroundColor: Colors.white,
+                                    ),
+                                    Image.asset(image[index])
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          Text(
-                            name[index],
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                          Text(
-                            price[index],
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w700),
-                          ),
-                        ],
+                            Text(
+                              name[index],
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w500),
+                            ),
+                            Text(
+                              price[index],
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w700),
+                            ),
+                          ],
+                        ),
                       );
                     }),
               ),
@@ -90,7 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
 
   List image = [
     "assets/hoodie.jpg",
