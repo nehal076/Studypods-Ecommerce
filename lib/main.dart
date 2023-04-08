@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:studypods_ecommerce/cart.dart';
 import 'package:studypods_ecommerce/catalogue.dart';
 import 'package:studypods_ecommerce/home.dart';
+import 'package:studypods_ecommerce/profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +37,7 @@ class _MyShopState extends State<MyShop> {
     MyHomePage(),
     Catalogue(),
     CartPage(),
-    Catalogue(),
+    Profile(),
   ];
 
   Widget currentScreen = MyHomePage();
