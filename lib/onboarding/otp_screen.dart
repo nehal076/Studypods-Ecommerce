@@ -1,14 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:studypods_ecommerce/main.dart';
+import 'package:studypods_ecommerce/utils/app_constants.dart';
 import 'package:studypods_ecommerce/utils/primary_button.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends StatefulWidget {
   final String phoneNumber;
   const OtpScreen({super.key, required this.phoneNumber});
 
   @override
+  State<OtpScreen> createState() => _OtpScreenState();
+}
+
+class _OtpScreenState extends State<OtpScreen> {
+  final borderColor = const Color.fromRGBO(30, 60, 87, 1);
+
+  @override
   Widget build(BuildContext context) {
+    const defaultPinTheme = PinTheme(
+      width: 56,
+      height: 56,
+      textStyle: TextStyle(
+        fontSize: 22,
+        color: Color.fromRGBO(30, 60, 87, 1),
+      ),
+      decoration: BoxDecoration(),
+    );
+
+    final cursor = Container(
+      width: 56,
+      height: 3,
+      decoration: BoxDecoration(
+        color: borderColor,
+        borderRadius: BorderRadius.circular(8),
+      ),
+    );
+
     return Scaffold(
       body: Column(
         children: [
@@ -20,9 +47,7 @@ class OtpScreen extends StatelessWidget {
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(200),
               ),
-              gradient: LinearGradient(
-                colors: [Color(0xff34283E), Color(0xff845FA1)],
-              ),
+              gradient: AppConstants.gradient,
             ),
             child: const Padding(
               padding: EdgeInsets.all(22.0),
@@ -50,7 +75,7 @@ class OtpScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "+91 $phoneNumber",
+                    "+91 ${widget.phoneNumber}",
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -60,24 +85,17 @@ class OtpScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(18.0),
+          Padding(
+            padding: const EdgeInsets.all(18.0),
             child: Center(
               child: Pinput(
-                // onCompleted: (pin) => print(pin),
+                length: 4,
+                pinAnimationType: PinAnimationType.slide,
+                // controller: controller,
+                // focusNode: focusNode,
+                defaultPinTheme: defaultPinTheme,
                 showCursor: true,
-                // defaultPinTheme: PinTheme(
-                //   width: 56,
-                //   height: 56,
-                //   textStyle: TextStyle(
-                //       fontSize: 20,
-                //       color: Color.fromRGBO(30, 60, 87, 1),
-                //       fontWeight: FontWeight.w600),
-                //   decoration: BoxDecoration(
-                //     border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
-                //     borderRadius: BorderRadius.circular(20),
-                //   ),
-                // ),
+                cursor: cursor,
               ),
             ),
           ),

@@ -4,6 +4,8 @@ import 'package:studypods_ecommerce/catalogue.dart';
 import 'package:studypods_ecommerce/onboarding/getting_started.dart';
 import 'package:studypods_ecommerce/home.dart';
 import 'package:studypods_ecommerce/profile.dart';
+import 'package:studypods_ecommerce/utils/app_constants.dart';
+import 'package:studypods_ecommerce/utils/logo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,9 +58,19 @@ class _MyShopState extends State<MyShop> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.purple,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: AppConstants.gradient,
+            ),
+          ),
           centerTitle: true,
-          title: const Text('MyShop'),
-          actions: const [Icon((Icons.notifications))],
+          title: const Logo(
+            fontSize: 22,
+          ),
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
+          ],
         ),
         drawer: const Drawer(),
         body: currentScreen,
