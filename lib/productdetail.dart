@@ -106,7 +106,7 @@ class ProductDetailsPage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: ElevatedButton(
                 onPressed: () {
-                  cart.addItem(DateTime.now().toString(), name, price, image);
+                  cart.addItem(name, name, price, image);
                 },
                 child: const Text("Add to cart"),
               ),
