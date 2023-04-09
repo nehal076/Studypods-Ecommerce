@@ -60,6 +60,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                   if (value == '') {
                     return 'Phone Number can\'t be empty';
                   }
+                  return null;
                 },
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(

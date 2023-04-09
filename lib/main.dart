@@ -35,10 +35,10 @@ class _MyShopState extends State<MyShop> {
   var currentIndex = 0;
 
   List<Widget> screens = [
-    MyHomePage(),
-    Catalogue(),
-    CartPage(),
-    Profile(),
+    const MyHomePage(),
+    const Catalogue(),
+    const CartPage(),
+    const Profile(),
   ];
 
   Widget currentScreen = const MyHomePage();

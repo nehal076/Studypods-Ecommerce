@@ -27,7 +27,7 @@ class CartPage extends StatelessWidget {
             children: [
               Text(
                 'Total: \$34.97',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 16),
               ElevatedButton(
@@ -78,12 +78,12 @@ class CartItem extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: 8),
                 Text(
                   '\$${(price * quantity).toStringAsFixed(2)}',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(height: 8),
                 Row(

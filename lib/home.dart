@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:studypods_ecommerce/catalogue.dart';
 import 'package:studypods_ecommerce/productdetail.dart';
 
 class MyHomePage extends StatefulWidget {

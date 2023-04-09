@@ -60,11 +60,11 @@ class OtpScreen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(18.0),
+          const Padding(
+            padding: EdgeInsets.all(18.0),
             child: Center(
               child: Pinput(
-                onCompleted: (pin) => print(pin),
+                // onCompleted: (pin) => print(pin),
                 showCursor: true,
                 // defaultPinTheme: PinTheme(
                 //   width: 56,

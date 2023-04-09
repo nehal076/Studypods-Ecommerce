@@ -24,38 +24,40 @@ class ProductDetailsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
+            SizedBox(
               height: 320,
               child: Image.asset(image, fit: BoxFit.contain),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 name,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 description,
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 16),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                "\$${price}",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                "\$$price",
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
-            Divider(),
+            const Divider(),
             Container(
-              padding: EdgeInsets.all(16.0),
-              child: Text(
+              padding: const EdgeInsets.all(16.0),
+              child: const Text(
                 "Reviews",
                 style: TextStyle(
                   fontSize: 18.0,
@@ -68,14 +70,14 @@ class ProductDetailsPage extends StatelessWidget {
               itemCount: 3, // replace with actual review count
               itemBuilder: (context, index) {
                 return ListTile(
-                  leading: CircleAvatar(
+                  leading: const CircleAvatar(
                     child: Text(
                         "U"), // replace with actual user initials or avatar
                   ),
                   title: Text("User $index"),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       SizedBox(height: 4.0),
                       Text(
                         "This product is great!",
@@ -96,12 +98,12 @@ class ProductDetailsPage extends StatelessWidget {
                 );
               },
             ),
-            Divider(),
+            const Divider(),
             Padding(
               padding: const EdgeInsets.all(20),
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text("Add to cart"),
+                child: const Text("Add to cart"),
               ),
             ),
           ],
