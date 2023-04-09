@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:studypods_ecommerce/onboarding/otp_screen.dart';
+import 'package:studypods_ecommerce/utils/app_constants.dart';
 import 'package:studypods_ecommerce/utils/primary_button.dart';
 
 class PhoneNumber extends StatefulWidget {
@@ -27,9 +28,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(200),
                 ),
-                gradient: LinearGradient(
-                  colors: [Color(0xff34283E), Color(0xff845FA1)],
-                ),
+                gradient: AppConstants.gradient,
               ),
               child: const Padding(
                 padding: EdgeInsets.all(22.0),
@@ -60,6 +59,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
                   if (value == '') {
                     return 'Phone Number can\'t be empty';
                   }
+                  return null;
                 },
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(

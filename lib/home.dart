@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:studypods_ecommerce/catalogue.dart';
 import 'package:studypods_ecommerce/productdetail.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -15,18 +14,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return SafeArea(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(25, 25, 25, 0),
-            child: Row(
-              children: [
-                Expanded(child: Container()),
-                const SizedBox(
-                  width: 25,
-                ),
-                const Icon(Icons.shopping_cart),
-              ],
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.all(25.0),
             child: Row(

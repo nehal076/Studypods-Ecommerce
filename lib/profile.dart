@@ -89,152 +89,150 @@ class Profile extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                Container(
-                  child: Expanded(
-                      child: ListView(
-                    children: [
-                      Card(
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 10),
-                        color: Colors.white70,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.privacy_tip_sharp,
-                            color: Colors.black54,
-                          ),
-                          title: Text(
-                            'Privacy',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Colors.black54,
-                          ),
+                Expanded(
+                    child: ListView(
+                  children: [
+                    Card(
+                      margin: const EdgeInsets.only(
+                          left: 35, right: 35, bottom: 10),
+                      color: Colors.white70,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.privacy_tip_sharp,
+                          color: Colors.black54,
+                        ),
+                        title: Text(
+                          'Privacy',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Card(
-                        color: Colors.white70,
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 10),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.online_prediction_rounded,
-                            color: Colors.black54,
-                          ),
-                          title: Text(
-                            'My Orders',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Colors.black54,
-                          ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Card(
+                      color: Colors.white70,
+                      margin: const EdgeInsets.only(
+                          left: 35, right: 35, bottom: 10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.online_prediction_rounded,
+                          color: Colors.black54,
+                        ),
+                        title: Text(
+                          'My Orders',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Card(
-                        color: Colors.white70,
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 10),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const ListTile(
-                          leading: Icon(Icons.offline_bolt_rounded,
-                              color: Colors.black54),
-                          title: Text(
-                            'Offers',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Colors.black54,
-                          ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Card(
+                      color: Colors.white70,
+                      margin: const EdgeInsets.only(
+                          left: 35, right: 35, bottom: 10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(Icons.offline_bolt_rounded,
+                            color: Colors.black54),
+                        title: Text(
+                          'Offers',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Card(
+                      color: Colors.white70,
+                      margin: const EdgeInsets.only(
+                          left: 35, right: 35, bottom: 10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.settings,
+                          color: Colors.black54,
+                        ),
+                        title: Text(
+                          'Settings',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios_outlined),
                       ),
-                      Card(
-                        color: Colors.white70,
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 10),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.settings,
-                            color: Colors.black54,
-                          ),
-                          title: Text(
-                            'Settings',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          trailing: Icon(Icons.arrow_forward_ios_outlined),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Card(
+                      color: Colors.white70,
+                      margin: const EdgeInsets.only(
+                          left: 35, right: 35, bottom: 10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.help,
+                          color: Colors.black54,
+                        ),
+                        title: Text(
+                          'Help & Support',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.black54,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Card(
-                        color: Colors.white70,
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 10),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.help,
-                            color: Colors.black54,
-                          ),
-                          title: Text(
-                            'Help & Support',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Colors.black54,
-                          ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Card(
+                      color: Colors.white70,
+                      margin: const EdgeInsets.only(
+                          left: 35, right: 35, bottom: 10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.logout,
+                          color: Color.fromARGB(136, 22, 17, 163),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Card(
-                        color: Colors.white70,
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 10),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.logout,
-                            color: Color.fromARGB(136, 22, 17, 163),
-                          ),
-                          title: Text(
-                            'Logout',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          trailing: Icon(Icons.arrow_forward_ios_outlined),
+                        title: Text(
+                          'Logout',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
                         ),
-                      )
-                    ],
-                  )),
-                )
+                        trailing: Icon(Icons.arrow_forward_ios_outlined),
+                      ),
+                    )
+                  ],
+                ))
               ],
             ),
           ),
