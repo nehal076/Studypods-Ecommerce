@@ -28,7 +28,6 @@ class Cart with ChangeNotifier {
   }
 
   void addItem(String pdtid, String name, String price, String imageUrl) {
-    print(pdtid);
     pdtid = name;
     if (_items.containsKey(pdtid)) {
       _items.update(
@@ -44,7 +43,7 @@ class Cart with ChangeNotifier {
           pdtid,
           () => CartItem(
               name: name,
-              id: DateTime.now().toString(),
+              id: name,
               quantity: 1,
               price: price,
               imageUrl: imageUrl));
@@ -73,7 +72,7 @@ class Cart with ChangeNotifier {
       _items.update(
           id,
           (existingCartItem) => CartItem(
-              id: DateTime.now().toString(),
+              id: id,
               name: existingCartItem.name,
               quantity: existingCartItem.quantity - 1,
               price: existingCartItem.price,
