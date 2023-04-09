@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:studypods_ecommerce/catalogue.dart';
+import 'package:studypods_ecommerce/productdetail.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -41,14 +43,27 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
               child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      childAspectRatio: 0.8),
-                  itemCount: 6,
-                  itemBuilder: (context, index) {
-                    return Column(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    childAspectRatio: 0.8),
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) {
+                          return ProductDetailsPage(
+                            name: name[index],
+                            description: name[index],
+                            price: price[index],
+                            image: image[index],
+                          );
+                        }),
+                      );
+                    },
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
@@ -79,8 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontSize: 16, fontWeight: FontWeight.w700),
                         ),
                       ],
-                    );
-                  }),
+                    ),
+                  );
+                },
+              ),
             ),
           )
         ],

@@ -3,6 +3,7 @@ import 'package:studypods_ecommerce/cart.dart';
 import 'package:studypods_ecommerce/catalogue.dart';
 import 'package:studypods_ecommerce/onboarding/getting_started.dart';
 import 'package:studypods_ecommerce/home.dart';
+import 'package:studypods_ecommerce/profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,10 +35,10 @@ class _MyShopState extends State<MyShop> {
   var currentIndex = 0;
 
   List<Widget> screens = [
-    const MyHomePage(),
-    const Catalogue(),
-    const CartPage(),
-    const Catalogue(),
+    MyHomePage(),
+    Catalogue(),
+    CartPage(),
+    Profile(),
   ];
 
   Widget currentScreen = const MyHomePage();
