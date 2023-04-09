@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:studypods_ecommerce/utils/cart.dart';
 
 class ProductDetailsPage extends StatelessWidget {
   final String name;
@@ -16,6 +18,7 @@ class ProductDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(name),
@@ -102,7 +105,9 @@ class ProductDetailsPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  cart.addItem(name, name, price, image);
+                },
                 child: const Text("Add to cart"),
               ),
             ),

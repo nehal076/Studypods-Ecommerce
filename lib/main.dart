@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:studypods_ecommerce/cart.dart';
 import 'package:studypods_ecommerce/catalogue.dart';
 import 'package:studypods_ecommerce/onboarding/getting_started.dart';
 import 'package:studypods_ecommerce/home.dart';
 import 'package:studypods_ecommerce/profile.dart';
 import 'package:studypods_ecommerce/utils/app_constants.dart';
+import 'package:studypods_ecommerce/utils/cart.dart';
 import 'package:studypods_ecommerce/utils/logo.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider.value(
+        value: Cart(),
+      ),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
