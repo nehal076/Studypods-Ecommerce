@@ -27,15 +27,33 @@ class _OtpScreenState extends State<OtpScreen> {
       decoration: BoxDecoration(),
     );
 
-    final cursor = Container(
-      width: 56,
-      height: 3,
-      decoration: BoxDecoration(
-        color: borderColor,
-        borderRadius: BorderRadius.circular(8),
-      ),
+    final cursor = Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+          width: 56,
+          height: 3,
+          decoration: BoxDecoration(
+            color: borderColor,
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+      ],
     );
 
+    final preFilledWidget = Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+          width: 56,
+          height: 3,
+          decoration: BoxDecoration(
+            color: Colors.purple,
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+      ],
+    );
     return Scaffold(
       body: Column(
         children: [
@@ -94,8 +112,9 @@ class _OtpScreenState extends State<OtpScreen> {
                 // controller: controller,
                 // focusNode: focusNode,
                 defaultPinTheme: defaultPinTheme,
-                showCursor: true,
+                // showCursor: true,
                 cursor: cursor,
+                preFilledWidget: preFilledWidget,
               ),
             ),
           ),
