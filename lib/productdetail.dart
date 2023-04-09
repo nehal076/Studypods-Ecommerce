@@ -6,7 +6,8 @@ class ProductDetailsPage extends StatelessWidget {
   final String price;
   final String image;
 
-  ProductDetailsPage({
+  const ProductDetailsPage({
+    super.key,
     required this.name,
     required this.description,
     required this.price,
@@ -25,7 +26,7 @@ class ProductDetailsPage extends StatelessWidget {
           children: [
             Container(
               height: 320,
-              child: Image.network(image, fit: BoxFit.cover),
+              child: Image.asset(image, fit: BoxFit.contain),
             ),
             SizedBox(height: 20),
             Padding(

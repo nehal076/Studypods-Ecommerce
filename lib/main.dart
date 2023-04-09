@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:studypods_ecommerce/cart.dart';
 import 'package:studypods_ecommerce/catalogue.dart';
+import 'package:studypods_ecommerce/onboarding/getting_started.dart';
 import 'package:studypods_ecommerce/home.dart';
 import 'package:studypods_ecommerce/profile.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyShop(),
+      home: const GettingStarted(),
     );
   }
 }
@@ -40,7 +41,7 @@ class _MyShopState extends State<MyShop> {
     Profile(),
   ];
 
-  Widget currentScreen = MyHomePage();
+  Widget currentScreen = const MyHomePage();
 
   List<IconData> listOfIcons = [
     Icons.home_rounded,
@@ -62,7 +63,7 @@ class _MyShopState extends State<MyShop> {
         drawer: const Drawer(),
         body: currentScreen,
         bottomNavigationBar: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           height: size.width * .155,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -70,7 +71,7 @@ class _MyShopState extends State<MyShop> {
               BoxShadow(
                 color: Colors.black.withOpacity(.15),
                 blurRadius: 30,
-                offset: Offset(0, 10),
+                offset: const Offset(0, 10),
               ),
             ],
             borderRadius: BorderRadius.circular(50),
@@ -94,7 +95,7 @@ class _MyShopState extends State<MyShop> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AnimatedContainer(
-                    duration: Duration(milliseconds: 1500),
+                    duration: const Duration(milliseconds: 1500),
                     curve: Curves.fastLinearToSlowEaseIn,
                     margin: EdgeInsets.only(
                       bottom: index == currentIndex ? 0 : size.width * .029,
@@ -103,7 +104,7 @@ class _MyShopState extends State<MyShop> {
                     ),
                     width: size.width * .128,
                     height: index == currentIndex ? size.width * .014 : 0,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.purpleAccent,
                       borderRadius: BorderRadius.vertical(
                         bottom: Radius.circular(10),
