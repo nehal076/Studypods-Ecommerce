@@ -56,10 +56,10 @@ class _PhoneNumberState extends State<PhoneNumber> {
               child: TextFormField(
                 controller: _phoneNumber,
                 validator: (value) {
-                  if (value == '') {
-                    return 'Phone Number can\'t be empty';
-                  }
-                  return null;
+                  // if (value == '') {
+                  //   return 'Phone Number can\'t be empty';
+                  // }
+                  // return null;
                 },
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(

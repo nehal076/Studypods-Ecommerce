@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:studypods_ecommerce/utils/cart.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<Cart>(context);
     return ListView(
       children: [
-        const CartItem(
-          name: 'campus shoes',
-          image: 'assets/campus.jpeg',
-          price: 9.99,
-          quantity: 2,
-        ),
-        const CartItem(
-          name: 'cricket',
-          image: 'assets/cricket.jpg',
-          price: 14.99,
-          quantity: 1,
+        ListView.builder(
+          shrinkWrap: true,
+          itemCount: cart.items.length,
+          itemBuilder: (ctx, i) => CartItem(
+            id: cart.items.values.toList()[i].id,
+            name: cart.items.values.toList()[i].name,
+            quantity: cart.items.values.toList()[i].quantity,
+            price: cart.items.values.toList()[i].price,
+            image: cart.items.values.toList()[i].imageUrl,
+          ),
         ),
         const SizedBox(height: 16),
         Padding(
@@ -26,7 +28,7 @@ class CartPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'Total: \$34.97',
+                'Total: ${cart.totalAmount}',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 16),
@@ -45,13 +47,15 @@ class CartPage extends StatelessWidget {
 }
 
 class CartItem extends StatelessWidget {
+  final String id;
   final String name;
   final String image;
-  final double price;
+  final String price;
   final int quantity;
 
   const CartItem({
     Key? key,
+    required this.id,
     required this.name,
     required this.image,
     required this.price,
@@ -60,6 +64,7 @@ class CartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<Cart>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
@@ -82,7 +87,7 @@ class CartItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '\$${(price * quantity).toStringAsFixed(2)}',
+                  '\$${(double.parse(price) * quantity).toStringAsFixed(2)}',
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(height: 8),
@@ -90,14 +95,14 @@ class CartItem extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () {
-                        // TODO: Implement remove item functionality.
+                        cart.removeSingleItem(id);
                       },
                       icon: const Icon(Icons.remove_circle_outline),
                     ),
                     Text(quantity.toString()),
                     IconButton(
                       onPressed: () {
-                        // TODO: Implement add item functionality.
+                        cart.addItem(id, name, price, image);
                       },
                       icon: const Icon(Icons.add_circle_outline),
                     ),
