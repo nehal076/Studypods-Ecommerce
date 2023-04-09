@@ -111,11 +111,11 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   List price = [
-    "Rs. 1,399",
-    "Rs. 1,49,999",
-    "Rs. 79,999",
-    "Rs. 1,899",
-    "Rs. 4,999",
-    "Rs. 2,599",
+    "1399",
+    "149999",
+    "79999",
+    "1899",
+    "4999",
+    "2599",
   ];
 }
