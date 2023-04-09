@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   pinput: ^2.2.31
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -24,3 +25,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+
+
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:studypods_ecommerce/home_widgets/carousel.dart';
 import 'package:studypods_ecommerce/productdetail.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,6 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return SafeArea(
       child: Column(
         children: [
+          const SliderScreen(),
           Padding(
             padding: const EdgeInsets.all(25.0),
             child: Row(
